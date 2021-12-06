@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: demo
+  labels:
+    app: demo
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+  - http:
+      paths:
+      - backend:
+          serviceName: demo
+          servicePort: 80
+    host: kustomize.demo.com
